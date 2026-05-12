@@ -1,43 +1,72 @@
-export const projects = [
-  {
-    title: "Cart Corral Tracker",
-    description: "Full-stack app to track and optimize cart corrals.",
-    tags: ["React", "Node", "Optimization"],
-  },
-  {
-    title: "Study Song Rater",
-    description: "Rates how good a song is for studying.",
-    tags: ["ML", "Audio", "UX"],
-  },
-];
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-export const notes = [
-  {
-    slug: "The-Beginning", 
-    title: "The Beginning: The start of my notes",
-    date: "1/17/26",
-    tags: ["React", "UI", "TypeScript"],
-    summary:`
-    ## Key Idea
-    This is the start of my notes page.
-    `.trim(),
-    content: `
-      This is the very first notes post that I will have on my website. So far, I have a couple of projects on my belt,
-      but some are a lot better than others and I have a lot of ideas coming along soon.
-      Some classes I will be taking this semester are Foundations of Higher Math, and Systems 1.
-      I hope that this year will challenge me enough to shape me into a better software developer, and perhaps even a better person 
-    `.trim()
-  },
-  {
-    slug: "testing",
-    title: "testing",
-    date: "1/17/26",
-    tags: ["testing"],
-    summary: `
-    this is just a test
-    `.trim(),  
-    content: `
-    this again is just a test.
-    `.trim()
-  }
-]
+export type Project = {
+  slug: string;
+  title: string;
+  description: string;
+  stack: string[];
+  github?: string;
+  demo?: string;
+  videoUrl?: string;
+  heroImage?: string;
+  order?: number;
+  content: string;
+};
+
+const projectsDirectory = path.join(process.cwd(), "content", "projects");
+
+export const projects: Project[] = fs
+  .readdirSync(projectsDirectory)
+  .filter((filename) => filename.endsWith(".md"))
+  .map((filename) => {
+    const fullPath = path.join(projectsDirectory, filename);
+    const fileContents = fs.readFileSync(fullPath, "utf-8");
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug: data.slug ?? filename.replace(/\.md$/, ""),
+      title: data.title,
+      description: data.description ?? "",
+      stack: data.stack ?? [],
+      github: data.github ?? "",
+      demo: data.demo ?? "",
+      videoUrl: data.videoUrl ?? "",
+      heroImage: data.heroImage ?? "",
+      order: data.order ?? 999,
+      content,
+    };
+  })
+  .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+
+export type Note = {
+  slug: string;
+  title: string;
+  date: string;
+  tags: string[];
+  summary: string;
+  content: string;
+};
+
+const notesDirectory = path.join(process.cwd(), "content", "notes");
+
+export const notes: Note[] = fs
+  .readdirSync(notesDirectory)
+  .filter((filename) => filename.endsWith(".md"))
+  .map((filename) => {
+    const slug = filename.replace(/\.md$/, "");
+    const fullPath = path.join(notesDirectory, filename);
+    const fileContents = fs.readFileSync(fullPath, "utf-8");
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug,
+      title: data.title,
+      date: data.date,
+      tags: data.tags ?? [],
+      summary: data.summary ?? "",
+      content,
+    };
+  })
+  .sort((a, b) => b.date.localeCompare(a.date));
