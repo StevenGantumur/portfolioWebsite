@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --bg-base: #0a0a0f;
+  --bg-surface: #141420;
+  --bg-elevated: #1e1e2e;
+  
+  --accent: #7c3aed;
+  --accent-light: #a78bfa;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --text-primary: #f0f0f5;
+  --text-muted: #8888a0;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --border: #2a2a3a;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-base);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-name {
+  transition: filter 0.2s ease;
+}
+
+.nav-name:hover {
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.7));
+}
+
+.nav-link {
+  transition: color 0.2s ease, background 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-light) !important;
+  background: rgba(124, 58, 237, 0.12);
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+.project-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(124, 58, 237, 0.5) !important;
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.15);
+}
+
+.note-content h1, .project-content h1,
+.note-content h2, .project-content h2,
+.note-content h3, .project-content h3 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.note-content h1, .project-content h1 { font-size: 1.75rem; }
+.note-content h2, .project-content h2 { font-size: 1.4rem; }
+.note-content h3, .project-content h3 { font-size: 1.15rem; }
+
+.note-content p, .project-content p {
+  margin-bottom: 1rem;
+}
+
+.note-content a, .project-content a {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+.note-content a:hover, .project-content a:hover {
+  color: var(--accent);
+}
+
+.note-content strong, .project-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.note-content code, .project-content code {
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--accent-light);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.note-content ul, .project-content ul,
+.note-content ol, .project-content ol {
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+  list-style-position: outside;
+}
+.note-content ul, .project-content ul { list-style: disc; }
+.note-content ol, .project-content ol { list-style: decimal; }
+
+.project-content img {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  margin: 1rem 0;
+}
+
+.project-content iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  margin: 1rem 0;
 }
