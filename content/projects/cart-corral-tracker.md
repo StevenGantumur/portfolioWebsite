@@ -6,7 +6,7 @@ stack: ["JavaScript", "Node", "Python", "LightGBM", "PostgreSQL"]
 github: "https://github.com/StevenGantumur/Woodmans-Tracker"
 demo: ""
 videoUrl: ""
-heroImage: ""
+heroImage: "/cart-corral-tracker.png"
 order: 1
 ---
 
