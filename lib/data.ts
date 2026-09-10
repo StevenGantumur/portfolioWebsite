@@ -70,3 +70,13 @@ export const notes: Note[] = fs
     };
   })
   .sort((a, b) => b.date.localeCompare(a.date));
+
+// Assets that may not be dropped into /public yet. Checked at build time so a
+// missing file degrades gracefully instead of rendering a broken image/link.
+const publicDirectory = path.join(process.cwd(), "public");
+
+export const hasAsset = (filename: string): boolean =>
+  fs.existsSync(path.join(publicDirectory, filename));
+
+export const hasHeadshot = hasAsset("headshot.jpg");
+export const hasResume = hasAsset("resume.pdf");

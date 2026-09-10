@@ -3,6 +3,10 @@ import { marked } from "marked";
 import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";
 
+export function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {

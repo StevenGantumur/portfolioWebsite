@@ -3,6 +3,10 @@ import { marked } from "marked";
 import { notes } from "@/lib/data";
 import { notFound } from "next/navigation";
 
+export function generateStaticParams() {
+  return notes.map((n) => ({ slug: n.slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {

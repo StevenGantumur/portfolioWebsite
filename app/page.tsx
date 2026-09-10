@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { projects, notes } from "@/lib/data";
+import { projects, notes, hasHeadshot } from "@/lib/data";
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 2);
@@ -13,15 +13,29 @@ export default function Home() {
         style={{ paddingTop: "80px" }}
       >
         <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
-          <img
-            src="/headshot.jpg"
-            alt="Steven Gantumur"
-            className="w-40 h-40 rounded-full object-cover flex-shrink-0"
-            style={{
-              border: "2px solid var(--accent)",
-              boxShadow: "0 0 30px rgba(124, 58, 237, 0.3)",
-            }}
-          />
+          {hasHeadshot ? (
+            <img
+              src="/headshot.jpg"
+              alt="Steven Gantumur"
+              className="w-40 h-40 rounded-full object-cover flex-shrink-0"
+              style={{
+                border: "2px solid var(--accent)",
+                boxShadow: "0 0 30px rgba(124, 58, 237, 0.3)",
+              }}
+            />
+          ) : (
+            <div
+              className="w-40 h-40 rounded-full flex-shrink-0 flex items-center justify-center text-4xl font-bold"
+              style={{
+                background: "linear-gradient(135deg, #7c3aed, #4c1d95)",
+                border: "2px solid var(--accent)",
+                boxShadow: "0 0 30px rgba(124, 58, 237, 0.3)",
+                color: "white",
+              }}
+            >
+              SG
+            </div>
+          )}
           <div>
             <p className="text-sm font-mono mb-2" style={{ color: "var(--accent-light)" }}>
               Hey, I&apos;m
@@ -47,10 +61,10 @@ export default function Home() {
             textShadow: "2px 2px 0px #3a3a5c, 4px 4px 0px #2a2a4a",
           }}
         >
-          Computer Science & Engineering student @ Ohio State — building things, breaking things, asking Claude to fix them (sometimes).
+          Computer Science & Engineering student @ THE Ohio State University — building things, breaking things, asking Claude to fix them (sometimes...).
         </p>
         <p className="text-lg" style={{ color: "var(--text-muted)" }}>
-          Full stack dev with a soft spot for machine learning and volleyball.
+          Working hard to be a full stack developer and not larp. Trying to learn AI/ML.
         </p>
       </section>
 

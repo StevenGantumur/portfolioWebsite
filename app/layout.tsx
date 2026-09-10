@@ -2,12 +2,27 @@ import Link from "next/link";
 import "./globals.css";
 import PageTransition from "./components/PageTransition";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://stevengantumur.vercel.app";
+
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Steven Gantumur",
     template: "%s — Steven Gantumur",
   },
   description: "Computer Science & Engineering student at Ohio State, building full-stack and ML projects.",
+  openGraph: {
+    title: "Steven Gantumur",
+    description: "Computer Science & Engineering student at Ohio State, building full-stack and ML projects.",
+    url: siteUrl,
+    siteName: "Steven Gantumur",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Steven Gantumur",
+    description: "Computer Science & Engineering student at Ohio State, building full-stack and ML projects.",
+  },
 };
 
 export default function RootLayout ({

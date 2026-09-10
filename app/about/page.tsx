@@ -1,7 +1,12 @@
+import { hasResume } from "@/lib/data";
+
 export const metadata = {
   title: "About",
   description: "About me — software engineer and CS&E student at Ohio State.",
 };
+
+// Fill this in with your profile URL and the LinkedIn button appears automatically.
+const LINKEDIN_URL = "";
 
 export default function AboutPage() {
   const skills = ["Python", "React", "Next.js", "TypeScript", "Node.js", "SQL", "Machine Learning"];
@@ -63,9 +68,9 @@ export default function AboutPage() {
         </h2>
         <ul className="space-y-2 text-sm" style={{ color: "var(--text-muted)" }}>
           <li>→ Finishing the Woodman&apos;s Cart Corral Tracker (full-stack + ML).</li>
-          <li>→ Attempting a 4.0 this semester.</li>
+          <li>→ Attempting a 4.0 this semester — missed it last time, so let&apos;s see how this one goes.</li>
           <li>→ Writing notes on what I&apos;m learning along the way.</li>
-          <li>→ Working on a new Baby Monitor project that involves customizable danger zones and AI surveillance.</li>
+          <li>→ Finishing my Baby Monitor project that involves customizable danger zones and AI surveillance.</li>
           <li>→ Losing weight to play volleyball at a more competitive level.</li>
         </ul>
       </section>
@@ -98,31 +103,35 @@ export default function AboutPage() {
           >
             GitHub
           </a>
-          <a
-            href="https://linkedin.com/in/CHANGE-ME"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs px-4 py-2 rounded-full"
-            style={{
-              background: "rgba(124, 58, 237, 0.2)",
-              color: "var(--accent-light)",
-              border: "1px solid rgba(124, 58, 237, 0.3)",
-            }}
-          >
-            LinkedIn
-          </a>
-          <a
-            href="/resume.pdf"
-            download
-            className="text-xs px-4 py-2 rounded-full"
-            style={{
-              background: "rgba(124, 58, 237, 0.2)",
-              color: "var(--accent-light)",
-              border: "1px solid rgba(124, 58, 237, 0.3)",
-            }}
-          >
-            Download Resume
-          </a>
+          {LINKEDIN_URL && (
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs px-4 py-2 rounded-full"
+              style={{
+                background: "rgba(124, 58, 237, 0.2)",
+                color: "var(--accent-light)",
+                border: "1px solid rgba(124, 58, 237, 0.3)",
+              }}
+            >
+              LinkedIn
+            </a>
+          )}
+          {hasResume && (
+            <a
+              href="/resume.pdf"
+              download
+              className="text-xs px-4 py-2 rounded-full"
+              style={{
+                background: "rgba(124, 58, 237, 0.2)",
+                color: "var(--accent-light)",
+                border: "1px solid rgba(124, 58, 237, 0.3)",
+              }}
+            >
+              Download Resume
+            </a>
+          )}
         </div>
       </section>
 
