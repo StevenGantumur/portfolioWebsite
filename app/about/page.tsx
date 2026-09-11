@@ -31,13 +31,13 @@ export default function AboutPage() {
         }}
       >
         <p>
-          Hey, I&apos;m Steven — a software engineer and student who enjoys building things that do stuff.
-          I&apos;m currently studying Computer Science & Engineering, taking courses like Discrete Mathematics and learning C in Systems 1,
+          Hey, I&apos;m Steven — an aspiring software engineer and student who enjoys building things that do stuff.
+          I&apos;m currently studying Computer Science & Engineering @ tOSU, taking classes, studying, 
           and spending the rest of my time building projects that mix full-stack development with machine learning.
         </p>
         <p>
           Outside of code, I play volleyball and try to stay curious about anything I haven&apos;t figured out yet.
-          This site is where I document what I&apos;m building, learning, and thinking about.
+          This site is where I document what I&apos;m building, learning, and thinking about. Sort of like my own diary, except it is public. 
         </p>
       </section>
 
@@ -71,7 +71,9 @@ export default function AboutPage() {
           <li>→ Attempting a 4.0 this semester — missed it last time, so let&apos;s see how this one goes.</li>
           <li>→ Writing notes on what I&apos;m learning along the way.</li>
           <li>→ Finishing my Baby Monitor project that involves customizable danger zones and AI surveillance.</li>
+          <li>→ Making my League of Legends helper app more viable and useful.</li>
           <li>→ Losing weight to play volleyball at a more competitive level.</li>
+          <li>→ Apply Apply Apply.</li>
         </ul>
       </section>
 
@@ -140,7 +142,7 @@ export default function AboutPage() {
           Off the Computer and On the Court
         </h2>
         <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-          If you really care, this is a clip of me playing some casual volleyball at the prestigious gym at tOSU! I tend to get really competititve so this is a cool clip!
+          If you really care, this is a clip of me playing some open rec volleyball at the gym at tOSU! I tend to get really competititve and obviously I gotta milk this clip.
         </p>
         <video
           src="/volleyball.mp4"
