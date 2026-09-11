@@ -7,7 +7,7 @@ github: "https://github.com/StevenGantumur/babyMonitor"
 demo: ""
 videoUrl: ""
 heroImage: ""
-order: 2
+order: 3
 ---
 
 ## The Story
