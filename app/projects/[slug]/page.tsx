@@ -77,7 +77,7 @@ export default async function ProjectPage({
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs px-4 py-2 rounded-full transition-colors duration-200"
+              className="text-sm px-6 py-2.5 rounded-full font-medium transition-colors duration-200"
               style={{
                 background: "rgba(124, 58, 237, 0.2)",
                 color: "var(--accent-light)",
@@ -92,7 +92,7 @@ export default async function ProjectPage({
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs px-4 py-2 rounded-full transition-colors duration-200"
+              className="text-sm px-6 py-2.5 rounded-full font-medium transition-colors duration-200"
               style={{
                 background: "rgba(124, 58, 237, 0.2)",
                 color: "var(--accent-light)",

@@ -72,7 +72,7 @@ export default function Home() {
             href="https://github.com/StevenGantumur"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm px-5 py-2 rounded-full transition-colors duration-200"
+            className="text-sm px-6 py-2.5 rounded-full font-medium transition-colors duration-200"
             style={{
               background: "rgba(124, 58, 237, 0.2)",
               color: "var(--accent-light)",
@@ -80,6 +80,19 @@ export default function Home() {
             }}
           >
             GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/steven-gantumur/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm px-6 py-2.5 rounded-full font-medium transition-colors duration-200"
+            style={{
+              background: "rgba(124, 58, 237, 0.2)",
+              color: "var(--accent-light)",
+              border: "1px solid rgba(124, 58, 237, 0.3)",
+            }}
+          >
+            LinkedIn
           </a>
         </div>
       </section>

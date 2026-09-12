@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 // Fill this in with your profile URL and the LinkedIn button appears automatically.
-const LINKEDIN_URL = "";
+const LINKEDIN_URL = "https://www.linkedin.com/in/steven-gantumur/";
 
 export default function AboutPage() {
   const skills = ["Python", "React", "Next.js", "TypeScript", "Node.js", "SQL", "Machine Learning"];
@@ -96,7 +96,7 @@ export default function AboutPage() {
             href="https://github.com/StevenGantumur"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs px-4 py-2 rounded-full"
+            className="text-sm px-6 py-2.5 rounded-full font-medium"
             style={{
               background: "rgba(124, 58, 237, 0.2)",
               color: "var(--accent-light)",
@@ -110,7 +110,7 @@ export default function AboutPage() {
               href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs px-4 py-2 rounded-full"
+              className="text-sm px-6 py-2.5 rounded-full font-medium"
               style={{
                 background: "rgba(124, 58, 237, 0.2)",
                 color: "var(--accent-light)",
@@ -124,7 +124,7 @@ export default function AboutPage() {
             <a
               href="/resume.pdf"
               download
-              className="text-xs px-4 py-2 rounded-full"
+              className="text-sm px-6 py-2.5 rounded-full font-medium"
               style={{
                 background: "rgba(124, 58, 237, 0.2)",
                 color: "var(--accent-light)",
