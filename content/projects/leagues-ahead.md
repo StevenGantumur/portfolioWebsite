@@ -6,7 +6,7 @@ stack: ["Python", "PostgreSQL", "FastAPI", "LightGBM", "pandas", "Next.js", "Typ
 github: "https://github.com/StevenGantumur/LeagueTracker"
 demo: ""
 videoUrl: ""
-heroImage: ""
+heroImage: "/leagues-ahead.png"
 order: 2
 ---
 

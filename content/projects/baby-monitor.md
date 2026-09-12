@@ -6,7 +6,7 @@ stack: ["Java", "OpenCV", "Swing"]
 github: "https://github.com/StevenGantumur/babyMonitor"
 demo: ""
 videoUrl: ""
-heroImage: ""
+heroImage: "/baby-monitor.jpg"
 order: 3
 ---
 
@@ -23,6 +23,8 @@ This project is a Baby Monitor that has two modes, a Crib Monitor and a Room Mon
 The reason I like this project is because it applies to my personal life and was sparked by my love for my niece.
 
 I also like that I learned a lot about OpenCV and how I can utilize the Mat library.
+
+Also I should probably admit something about the screenshot at the top of this page. That is not a real baby. I do not have a baby. That is a stock photo of a baby in a crib, pulled up on an iPad and propped in front of my camera, watermark and all. My niece was not available for testing. But the danger zone still went off on it, so honestly I am counting that as a pass.
 
 ## Tech Decisions
 
