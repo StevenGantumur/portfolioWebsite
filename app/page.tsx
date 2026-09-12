@@ -66,6 +66,22 @@ export default function Home() {
         <p className="text-lg" style={{ color: "var(--text-muted)" }}>
           Working hard to be a full stack developer and not larp. Trying to learn AI/ML.
         </p>
+
+        <div className="flex flex-wrap gap-3 mt-8">
+          <a
+            href="https://github.com/StevenGantumur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm px-5 py-2 rounded-full transition-colors duration-200"
+            style={{
+              background: "rgba(124, 58, 237, 0.2)",
+              color: "var(--accent-light)",
+              border: "1px solid rgba(124, 58, 237, 0.3)",
+            }}
+          >
+            GitHub
+          </a>
+        </div>
       </section>
 
       {/* FEATURED PROJECTS */}
